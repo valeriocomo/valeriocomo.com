@@ -25,6 +25,9 @@
     "type": "git",
     "url": "https://github.com/BlackrockDigital/startbootstrap-resume.git"
   },
+  "scripts": {
+    "deploy": "gulp && firebase deploy"
+  },
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "devicons": "^1.8.0",
