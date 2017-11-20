@@ -18,7 +18,7 @@ var banner = ['/*!\n',
 
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', function() {
-  return gulp.src('scss/resume.scss')
+  return gulp.src('assets/scss/resume.scss')
     .pipe(sass())
     .pipe(header(banner, {
       pkg: pkg
@@ -31,7 +31,7 @@ gulp.task('sass', function() {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
-  return gulp.src('public/css/resume.css')
+  return gulp.src('public/assets/css/resume.css')
     .pipe(cleanCSS({
       compatibility: 'ie8'
     }))
@@ -116,8 +116,8 @@ gulp.task('browserSync', function() {
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
-  gulp.watch('scss/*.scss', ['sass']);
-  gulp.watch('public/css/*.css', ['minify-css']);
+  gulp.watch('assets/scss/*.scss', ['sass']);
+  gulp.watch('public/assets/css/*.css', ['minify-css']);
   gulp.watch('public/js/*.js', ['minify-js']);
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('public/index.html', browserSync.reload);
