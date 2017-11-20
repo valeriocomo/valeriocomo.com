@@ -23,7 +23,7 @@ gulp.task('sass', function() {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest('public/css'))
+    .pipe(gulp.dest('public/assets/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -38,7 +38,7 @@ gulp.task('minify-css', ['sass'], function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('public/css'))
+    .pipe(gulp.dest('public/assets/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -54,7 +54,7 @@ gulp.task('minify-js', function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('public/js'))
+    .pipe(gulp.dest('public/assets/js'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -69,13 +69,13 @@ gulp.task('copy', function() {
       '!**/bootstrap-theme.*',
       '!**/*.map'
     ])
-    .pipe(gulp.dest('public/vendor/bootstrap'))
+    .pipe(gulp.dest('public/assets/vendor/bootstrap'))
 
   gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-    .pipe(gulp.dest('public/vendor/jquery'))
+    .pipe(gulp.dest('public/assets/vendor/jquery'))
 
   gulp.src(['node_modules/jquery.easing/*.js'])
-    .pipe(gulp.dest('public/vendor/jquery-easing'))
+    .pipe(gulp.dest('public/assets/vendor/jquery-easing'))
 
   gulp.src([
       'node_modules/font-awesome/**',
@@ -85,7 +85,7 @@ gulp.task('copy', function() {
       '!node_modules/font-awesome/*.md',
       '!node_modules/font-awesome/*.json'
     ])
-    .pipe(gulp.dest('public/vendor/font-awesome'))
+    .pipe(gulp.dest('public/assets/vendor/font-awesome'))
 
   gulp.src([
       'node_modules/devicons/**/*',
@@ -96,10 +96,10 @@ gulp.task('copy', function() {
       '!node_modules/devicons/!SVG',
       '!node_modules/devicons/!SVG/**/*'
     ])
-    .pipe(gulp.dest('public/vendor/devicons'))
+    .pipe(gulp.dest('public/assets/vendor/devicons'))
 
   gulp.src(['node_modules/simple-line-icons/**/*', '!node_modules/simple-line-icons/*.json', '!node_modules/simple-line-icons/*.md'])
-    .pipe(gulp.dest('public/vendor/simple-line-icons'))
+    .pipe(gulp.dest('public/assets/vendor/simple-line-icons'))
 })
 
 // Default task
