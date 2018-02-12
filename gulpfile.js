@@ -46,7 +46,7 @@ gulp.task('minify-css', ['sass'], function() {
 
 // Minify custom JS
 gulp.task('minify-js', function() {
-  return gulp.src('public/js/resume.js')
+  return gulp.src('assets/js/resume.js')
     .pipe(uglify())
     .pipe(header(banner, {
       pkg: pkg
@@ -118,8 +118,8 @@ gulp.task('browserSync', function() {
 gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
   gulp.watch('assets/scss/*.scss', ['sass']);
   gulp.watch('public/assets/css/*.css', ['minify-css']);
-  gulp.watch('public/js/*.js', ['minify-js']);
+  gulp.watch('assets/js/*.js', ['minify-js']);
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('public/index.html', browserSync.reload);
-  gulp.watch('public/js/**/*.js', browserSync.reload);
+  gulp.watch('assets/js/**/*.js', browserSync.reload);
 });
