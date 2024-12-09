@@ -37,6 +37,7 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-resume.git"
     },
     "dependencies": {
+        "@types/node": "^18.19.67",
         "bootstrap": "5.2.3"
     },
     "devDependencies": {
